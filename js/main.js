@@ -107,9 +107,18 @@ const utils = {
 
     // Create tooltip
     createTooltip: function() {
-        const tooltip = d3.select('body').append('div')
-            .attr('class', 'tooltip')
-            .style('opacity', 0);
+        const tooltip = document.createElement('div');
+        tooltip.className = 'tooltip';
+        tooltip.style.opacity = '0';
+        tooltip.style.position = 'absolute';
+        tooltip.style.background = 'rgba(0, 0, 0, 0.8)';
+        tooltip.style.color = 'white';
+        tooltip.style.padding = '8px 12px';
+        tooltip.style.borderRadius = '4px';
+        tooltip.style.fontSize = '12px';
+        tooltip.style.pointerEvents = 'none';
+        tooltip.style.zIndex = '1000';
+        document.body.appendChild(tooltip);
         return tooltip;
     }
 };
