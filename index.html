@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML/DL Model Visualizer - Interactive Learning</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-brain"></i>
+                <span>ML/DL Visualizer</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#ml-models" class="nav-link">ML Models</a>
+                <a href="#dl-models" class="nav-link">Deep Learning</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title animate-fade-in">
+                    Visualize & Understand
+                    <span class="gradient-text">Machine Learning</span>
+                </h1>
+                <p class="hero-description animate-fade-in-delay">
+                    Interactive animations and explanations for ML and Deep Learning algorithms.
+                    Learn how models work with visual, step-by-step demonstrations.
+                </p>
+                <div class="hero-buttons animate-fade-in-delay-2">
+                    <a href="#ml-models" class="btn btn-primary">
+                        <i class="fas fa-play-circle"></i>
+                        Start Learning
+                    </a>
+                    <a href="#about" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="hero-animation">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ML Models Section -->
+        <section id="ml-models" class="section">
+            <div class="container">
+                <h2 class="section-title">Machine Learning Models</h2>
+                <p class="section-description">
+                    Explore classic machine learning algorithms with interactive visualizations
+                </p>
+                
+                <div class="models-grid">
+                    <div class="model-card" data-model="linear-regression">
+                        <div class="model-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Linear Regression</h3>
+                        <p>Learn how linear regression finds the best line through data points</p>
+                        <div class="model-tags">
+                            <span class="tag">Supervised</span>
+                            <span class="tag">Regression</span>
+                        </div>
+                    </div>
+
+                    <div class="model-card" data-model="decision-tree">
+                        <div class="model-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h3>Decision Trees</h3>
+                        <p>Visualize how decision trees make predictions through branching logic</p>
+                        <div class="model-tags">
+                            <span class="tag">Supervised</span>
+                            <span class="tag">Classification</span>
+                        </div>
+                    </div>
+
+                    <div class="model-card" data-model="svm">
+                        <div class="model-icon">
+                            <i class="fas fa-divide"></i>
+                        </div>
+                        <h3>Support Vector Machine</h3>
+                        <p>See how SVM finds optimal decision boundaries in feature space</p>
+                        <div class="model-tags">
+                            <span class="tag">Supervised</span>
+                            <span class="tag">Classification</span>
+                        </div>
+                    </div>
+
+                    <div class="model-card" data-model="kmeans">
+                        <div class="model-icon">
+                            <i class="fas fa-circle-nodes"></i>
+                        </div>
+                        <h3>K-Means Clustering</h3>
+                        <p>Watch how K-means iteratively groups data into clusters</p>
+                        <div class="model-tags">
+                            <span class="tag">Unsupervised</span>
+                            <span class="tag">Clustering</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deep Learning Section -->
+        <section id="dl-models" class="section section-dark">
+            <div class="container">
+                <h2 class="section-title">Deep Learning Architectures</h2>
+                <p class="section-description">
+                    Dive deep into neural networks and advanced architectures
+                </p>
+                
+                <div class="models-grid">
+                    <div class="model-card" data-model="neural-network">
+                        <div class="model-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>Neural Networks</h3>
+                        <p>Understand how artificial neurons work together in layers</p>
+                        <div class="model-tags">
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">Foundation</span>
+                        </div>
+                    </div>
+
+                    <div class="model-card" data-model="cnn">
+                        <div class="model-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h3>Convolutional Neural Networks</h3>
+                        <p>See how CNNs process images through convolution and pooling</p>
+                        <div class="model-tags">
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Convolution</span>
+                        </div>
+                    </div>
+
+                    <div class="model-card" data-model="rnn">
+                        <div class="model-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h3>Recurrent Neural Networks</h3>
+                        <p>Learn how RNNs handle sequential data with memory</p>
+                        <div class="model-tags">
+                            <span class="tag">Sequential</span>
+                            <span class="tag">Memory</span>
+                        </div>
+                    </div>
+
+                    <div class="model-card" data-model="transformer">
+                        <div class="model-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>Transformers</h3>
+                        <p>Explore attention mechanisms in modern language models</p>
+                        <div class="model-tags">
+                            <span class="tag">Attention</span>
+                            <span class="tag">NLP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About This Project</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            This interactive visualization tool helps you understand machine learning and deep learning 
+                            algorithms through engaging animations and step-by-step explanations. Each model is presented 
+                            with visual demonstrations of how it processes data and makes predictions.
+                        </p>
+                        <div class="features">
+                            <div class="feature">
+                                <i class="fas fa-eye"></i>
+                                <h4>Visual Learning</h4>
+                                <p>See algorithms in action with interactive animations</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-code"></i>
+                                <h4>Code Examples</h4>
+                                <p>Learn implementation with practical code snippets</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h4>Responsive Design</h4>
+                                <p>Learn on any device with mobile-friendly interface</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ML/DL Model Visualizer. Created for educational purposes.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Model Details -->
+    <div id="model-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/visualizations.js"></script>
+</body>
+</html>
