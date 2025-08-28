@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Model Visualizer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Custom visualization utilities -->
+    <script src="js/viz-utils.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-title">ML Model Visualizer</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#decision-tree" class="nav-link active" data-model="decision-tree">Decision Tree</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#logistic-regression" class="nav-link" data-model="logistic-regression">Logistic Regression</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#svm" class="nav-link" data-model="svm">SVM</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Decision Tree Section -->
+            <section id="decision-tree" class="model-section active">
+                <div class="section-header">
+                    <h2>Decision Tree Visualization</h2>
+                    <p>Explore how decision trees make predictions through interactive branching logic.</p>
+                </div>
+                
+                <div class="visualization-container">
+                    <div class="controls-panel">
+                        <h3>Parameters</h3>
+                        <div class="control-group">
+                            <label for="max-depth">Max Depth:</label>
+                            <input type="range" id="max-depth" min="1" max="5" value="3">
+                            <span id="max-depth-value">3</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="min-samples">Min Samples per Leaf:</label>
+                            <input type="range" id="min-samples" min="1" max="10" value="2">
+                            <span id="min-samples-value">2</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="dataset-select">Dataset:</label>
+                            <select id="dataset-select">
+                                <option value="iris">Iris Dataset</option>
+                                <option value="wine">Wine Dataset</option>
+                                <option value="custom">Custom Data</option>
+                            </select>
+                        </div>
+                        <button id="train-tree" class="btn btn-primary">Train Tree</button>
+                        <button id="animate-prediction" class="btn btn-secondary">Animate Prediction</button>
+                    </div>
+
+                    <div class="visualization-area">
+                        <div id="tree-visualization" class="viz-content"></div>
+                        <div id="tree-explanation" class="explanation-panel">
+                            <h4>How Decision Trees Work</h4>
+                            <div class="step-explanation">
+                                <p>Decision trees make predictions by asking a series of yes/no questions about the features.</p>
+                                <ol id="tree-steps">
+                                    <li>Start at the root node</li>
+                                    <li>Evaluate the splitting condition</li>
+                                    <li>Follow the branch based on the answer</li>
+                                    <li>Repeat until reaching a leaf node</li>
+                                    <li>Return the prediction from the leaf</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logistic Regression Section -->
+            <section id="logistic-regression" class="model-section">
+                <div class="section-header">
+                    <h2>Logistic Regression Visualization</h2>
+                    <p>See how logistic regression creates decision boundaries using the sigmoid function.</p>
+                </div>
+                
+                <div class="visualization-container">
+                    <div class="controls-panel">
+                        <h3>Parameters</h3>
+                        <div class="control-group">
+                            <label for="learning-rate">Learning Rate:</label>
+                            <input type="range" id="learning-rate" min="0.001" max="1" step="0.001" value="0.01">
+                            <span id="learning-rate-value">0.01</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="iterations">Iterations:</label>
+                            <input type="range" id="iterations" min="10" max="1000" step="10" value="100">
+                            <span id="iterations-value">100</span>
+                        </div>
+                        <button id="train-logistic" class="btn btn-primary">Train Model</button>
+                        <button id="animate-gradient" class="btn btn-secondary">Show Gradient Descent</button>
+                    </div>
+
+                    <div class="visualization-area">
+                        <div id="logistic-visualization" class="viz-content"></div>
+                        <div id="logistic-explanation" class="explanation-panel">
+                            <h4>How Logistic Regression Works</h4>
+                            <div class="step-explanation">
+                                <p>Logistic regression uses the sigmoid function to model probabilities and create decision boundaries.</p>
+                                <ol id="logistic-steps">
+                                    <li>Linear combination of features: z = w₀ + w₁x₁ + w₂x₂</li>
+                                    <li>Apply sigmoid function: p = 1 / (1 + e^(-z))</li>
+                                    <li>Use gradient descent to optimize weights</li>
+                                    <li>Create decision boundary where p = 0.5</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SVM Section -->
+            <section id="svm" class="model-section">
+                <div class="section-header">
+                    <h2>Support Vector Machine Visualization</h2>
+                    <p>Understand how SVM finds optimal decision boundaries with maximum margin.</p>
+                </div>
+                
+                <div class="visualization-container">
+                    <div class="controls-panel">
+                        <h3>Parameters</h3>
+                        <div class="control-group">
+                            <label for="c-parameter">C Parameter:</label>
+                            <input type="range" id="c-parameter" min="0.1" max="10" step="0.1" value="1">
+                            <span id="c-parameter-value">1</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="kernel-select">Kernel:</label>
+                            <select id="kernel-select">
+                                <option value="linear">Linear</option>
+                                <option value="rbf">RBF (Gaussian)</option>
+                                <option value="polynomial">Polynomial</option>
+                            </select>
+                        </div>
+                        <button id="train-svm" class="btn btn-primary">Train SVM</button>
+                        <button id="show-support-vectors" class="btn btn-secondary">Highlight Support Vectors</button>
+                    </div>
+
+                    <div class="visualization-area">
+                        <div id="svm-visualization" class="viz-content"></div>
+                        <div id="svm-explanation" class="explanation-panel">
+                            <h4>How SVM Works</h4>
+                            <div class="step-explanation">
+                                <p>SVM finds the optimal hyperplane that separates classes with maximum margin.</p>
+                                <ol id="svm-steps">
+                                    <li>Find the hyperplane that separates classes</li>
+                                    <li>Maximize the margin between classes</li>
+                                    <li>Identify support vectors (closest points)</li>
+                                    <li>Use kernel tricks for non-linear separation</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ML Model Visualizer. Educational tool for understanding machine learning algorithms.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/decision-tree-simple.js"></script>
+    <!-- <script src="js/logistic-regression.js"></script>
+    <script src="js/svm.js"></script> -->
+</body>
+</html>

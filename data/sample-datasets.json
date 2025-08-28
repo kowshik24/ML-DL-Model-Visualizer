@@ -1,0 +1,50 @@
+{
+  "iris": {
+    "name": "Iris Dataset",
+    "description": "Classic flower classification dataset with 3 species",
+    "features": ["sepal_length", "sepal_width", "petal_length", "petal_width"],
+    "classes": ["setosa", "versicolor", "virginica"],
+    "data": [
+      {"x": 5.1, "y": 3.5, "class": 0, "species": "setosa"},
+      {"x": 4.9, "y": 3.0, "class": 0, "species": "setosa"},
+      {"x": 4.7, "y": 3.2, "class": 0, "species": "setosa"},
+      {"x": 7.0, "y": 3.2, "class": 1, "species": "versicolor"},
+      {"x": 6.4, "y": 3.2, "class": 1, "species": "versicolor"},
+      {"x": 6.9, "y": 3.1, "class": 1, "species": "versicolor"},
+      {"x": 6.3, "y": 3.3, "class": 2, "species": "virginica"},
+      {"x": 5.8, "y": 2.7, "class": 2, "species": "virginica"},
+      {"x": 7.1, "y": 3.0, "class": 2, "species": "virginica"}
+    ]
+  },
+  "wine": {
+    "name": "Wine Dataset",
+    "description": "Wine quality classification based on chemical properties",
+    "features": ["alcohol", "flavonoids", "color_intensity", "proline"],
+    "classes": ["class_1", "class_2", "class_3"],
+    "data": [
+      {"x": 14.23, "y": 2.8, "class": 0, "type": "class_1"},
+      {"x": 13.20, "y": 2.65, "class": 0, "type": "class_1"},
+      {"x": 13.16, "y": 2.36, "class": 0, "type": "class_1"},
+      {"x": 12.37, "y": 1.63, "class": 1, "type": "class_2"},
+      {"x": 12.33, "y": 1.10, "class": 1, "type": "class_2"},
+      {"x": 12.64, "y": 1.36, "class": 1, "type": "class_2"},
+      {"x": 13.71, "y": 5.65, "class": 2, "type": "class_3"},
+      {"x": 13.40, "y": 4.60, "class": 2, "type": "class_3"},
+      {"x": 13.27, "y": 4.28, "class": 2, "type": "class_3"}
+    ]
+  },
+  "breast_cancer": {
+    "name": "Breast Cancer Dataset",
+    "description": "Binary classification for cancer diagnosis",
+    "features": ["mean_radius", "mean_texture", "mean_perimeter", "mean_area"],
+    "classes": ["benign", "malignant"],
+    "data": [
+      {"x": 17.99, "y": 10.38, "class": 1, "diagnosis": "malignant"},
+      {"x": 20.57, "y": 17.77, "class": 1, "diagnosis": "malignant"},
+      {"x": 19.69, "y": 21.25, "class": 1, "diagnosis": "malignant"},
+      {"x": 11.42, "y": 20.38, "class": 0, "diagnosis": "benign"},
+      {"x": 20.29, "y": 14.34, "class": 0, "diagnosis": "benign"},
+      {"x": 12.45, "y": 15.70, "class": 0, "diagnosis": "benign"}
+    ]
+  }
+}
