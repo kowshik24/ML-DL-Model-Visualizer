@@ -1,0 +1,555 @@
+/* Advanced Animations for ML/DL Visualizations */
+
+/* Neural Network Animation */
+.neural-network-viz {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background: #f8fafc;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.neuron {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #3b82f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.neuron.active {
+    background: #ef4444;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+.connection {
+    position: absolute;
+    height: 2px;
+    background: #6b7280;
+    transform-origin: left center;
+    transition: all 0.3s ease;
+}
+
+.connection.active {
+    background: #ef4444;
+    height: 3px;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+}
+
+/* Linear Regression Animation */
+.regression-viz {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    background: #f8fafc;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.data-point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #3b82f6;
+    border-radius: 50%;
+    animation: pointAppear 0.5s ease;
+}
+
+.regression-line {
+    position: absolute;
+    height: 2px;
+    background: #ef4444;
+    transform-origin: left center;
+    animation: lineGrow 2s ease forwards;
+    opacity: 0;
+}
+
+/* Decision Tree Animation */
+.tree-viz {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    background: #f8fafc;
+    border-radius: 10px;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tree-node {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    animation: nodeAppear 0.8s ease forwards;
+}
+
+.tree-node.leaf {
+    background: #10b981;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.tree-branch {
+    position: absolute;
+    height: 2px;
+    background: #6b7280;
+    transform-origin: left center;
+    animation: branchGrow 1s ease forwards;
+}
+
+/* K-Means Animation */
+.kmeans-viz {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    background: #f8fafc;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.cluster-point {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    transition: all 0.8s ease;
+}
+
+.centroid {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ef4444;
+    border-radius: 50%;
+    background: rgba(239, 68, 68, 0.2);
+    animation: centroidPulse 1.5s infinite;
+}
+
+/* CNN Animation */
+.cnn-viz {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background: #f8fafc;
+    border-radius: 10px;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.feature-map {
+    width: 60px;
+    height: 60px;
+    background: #3b82f6;
+    border-radius: 8px;
+    position: relative;
+    animation: featureMapPulse 2s infinite;
+}
+
+.feature-map::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    border-radius: 10px;
+    animation: scanline 3s infinite;
+}
+
+.convolution-filter {
+    width: 30px;
+    height: 30px;
+    background: #ef4444;
+    border-radius: 4px;
+    animation: filterMove 4s infinite;
+}
+
+/* RNN Animation */
+.rnn-viz {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    background: #f8fafc;
+    border-radius: 10px;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rnn-cell {
+    width: 80px;
+    height: 60px;
+    background: #8b5cf6;
+    border-radius: 10px;
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    animation: cellProcess 3s infinite;
+}
+
+.memory-flow {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: #ef4444;
+    animation: memoryFlow 2s infinite;
+}
+
+/* SVM Animation */
+.svm-viz {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    background: #f8fafc;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.support-vector {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 3px solid #ef4444;
+    border-radius: 50%;
+    background: white;
+    animation: supportVectorHighlight 2s infinite;
+}
+
+.decision-boundary {
+    position: absolute;
+    width: 2px;
+    height: 300px;
+    background: #10b981;
+    left: 50%;
+    top: 25px;
+    transform: translateX(-50%);
+    animation: boundaryAppear 1.5s ease forwards;
+}
+
+.margin-line {
+    position: absolute;
+    width: 1px;
+    height: 300px;
+    background: #6b7280;
+    top: 25px;
+    animation: marginAppear 2s ease forwards;
+    opacity: 0;
+}
+
+/* Loading Animations */
+.loading-dots {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.loading-dots span {
+    width: 8px;
+    height: 8px;
+    background: #3b82f6;
+    border-radius: 50%;
+    animation: loadingDot 1.4s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+.loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+/* Progress Bars */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    animation: progressPulse 2s infinite;
+}
+
+/* Keyframes */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes pointAppear {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes lineGrow {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes nodeAppear {
+    from {
+        opacity: 0;
+        transform: scale(0) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes branchGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes centroidPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+}
+
+@keyframes featureMapPulse {
+    0%, 100% {
+        background: #3b82f6;
+        transform: scale(1);
+    }
+    50% {
+        background: #8b5cf6;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes scanline {
+    0% {
+        clip-path: inset(0 0 100% 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes filterMove {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(30px);
+    }
+}
+
+@keyframes cellProcess {
+    0%, 100% {
+        background: #8b5cf6;
+        transform: scale(1);
+    }
+    50% {
+        background: #ef4444;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes memoryFlow {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scaleX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scaleX(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) scaleX(0);
+    }
+}
+
+@keyframes supportVectorHighlight {
+    0%, 100% {
+        border-color: #ef4444;
+        transform: scale(1);
+    }
+    50% {
+        border-color: #fbbf24;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes boundaryAppear {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        height: 300px;
+        opacity: 1;
+    }
+}
+
+@keyframes marginAppear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.6;
+    }
+}
+
+@keyframes loadingDot {
+    0%, 80%, 100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes progressPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Interactive Elements */
+.interactive-element {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.interactive-element:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.visualization-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    padding: 0.5rem 1rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.control-btn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.control-btn.active {
+    background: #ef4444;
+}
+
+/* Code Snippet Styling */
+.code-snippet {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    position: relative;
+    overflow-x: auto;
+}
+
+.code-snippet::before {
+    content: 'Python';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: #3b82f6;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.code-highlight {
+    background: rgba(59, 130, 246, 0.2);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    animation: codeHighlight 2s infinite;
+}
+
+@keyframes codeHighlight {
+    0%, 100% { background: rgba(59, 130, 246, 0.2); }
+    50% { background: rgba(59, 130, 246, 0.4); }
+}
